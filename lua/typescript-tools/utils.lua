@@ -173,10 +173,10 @@ function M.on_definition_response(_, result, _, opts)
     local w = opts.reuse_win and vim.fn.win_findbuf(b)[1] or win
     vim.api.nvim_win_set_buf(w, b)
     vim.api.nvim_win_set_cursor(w, { item.lnum, item.col - 1 })
-    vim._with({ win = w }, function()
+    -- vim._with({ win = w }, function()
       -- Open folds under the cursor
-      vim.cmd "normal! zv"
-    end)
+    --  vim.cmd "normal! zv"
+    -- end)
     return
   end
 
